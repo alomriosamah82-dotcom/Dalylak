@@ -1,0 +1,4010 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليـلك — مستشارك التعليمي والعملي</title>
+    <style>
+/* ===== إعدادات عامة ===== */
+:root {
+  /* الألوان - الوضع الفاتح */
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #9b59b6;
+  --background-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --border-color: #e1e8ed;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.15);
+  
+  /* الألوان - الوضع الداكن */
+  --dark-primary: #3498db;
+  --dark-secondary: #2ecc71;
+  --dark-accent: #9b59b6;
+  --dark-background: #121212;
+  --dark-surface: #1e1e1e;
+  --dark-text-primary: #f1f1f1;
+  --dark-text-secondary: #b0b0b0;
+  --dark-border: #333333;
+  --dark-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --dark-shadow-hover: 0 8px 15px rgba(0, 0, 0, 0.4);
+  
+  /* أحجام الخطوط */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.5rem;
+  --font-3xl: 1.875rem;
+  --font-4xl: 2.25rem;
+  
+  /* تباعد */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* نصف قطر الزوايا */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  
+  /* انتقالات */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* إعدادات CSS العامة */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
+  overflow-x: hidden;
+}
+
+body.dark-mode {
+  --primary-color: var(--dark-primary);
+  --secondary-color: var(--dark-secondary);
+  --accent-color: var(--dark-accent);
+  --background-color: var(--dark-background);
+  --surface-color: var(--dark-surface);
+  --text-primary: var(--dark-text-primary);
+  --text-secondary: var(--dark-text-secondary);
+  --border-color: var(--dark-border);
+  --shadow: var(--dark-shadow);
+  --shadow-hover: var(--dark-shadow-hover);
+}
+
+/* ===== النصوص والعناوين ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--font-4xl);
+}
+
+h2 {
+  font-size: var(--font-3xl);
+}
+
+h3 {
+  font-size: var(--font-2xl);
+}
+
+h4 {
+  font-size: var(--font-xl);
+}
+
+h5 {
+  font-size: var(--font-lg);
+}
+
+h6 {
+  font-size: var(--font-md);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* ===== الأزرار ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  font-family: inherit;
+  font-size: var(--font-md);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--secondary-color), #27ae60);
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.btn-success:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-favorite {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-favorite:hover:not(:disabled),
+.btn-favorite.active {
+  background-color: #ff4757;
+  color: white;
+  border-color: #ff4757;
+}
+
+/* ===== الشاشات ===== */
+.screen {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===== شاشة الترحيب ===== */
+#welcome-screen {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#welcome-screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+  background-size: cover;
+}
+
+.welcome-container {
+  text-align: center;
+  z-index: 1;
+  max-width: 800px;
+  padding: var(--space-2xl);
+}
+
+.logo-animation {
+  margin-bottom: var(--space-2xl);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.logo-circle {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.logo-circle i {
+  font-size: 3rem;
+  color: white;
+}
+
+.logo-animation h1 {
+  font-size: 3.5rem;
+  margin-bottom: var(--space-sm);
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+  font-size: var(--font-lg);
+  opacity: 0.9;
+}
+
+.welcome-content {
+  margin-bottom: var(--space-2xl);
+}
+
+.welcome-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-lg);
+}
+
+.welcome-description {
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-2xl);
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+.footer-note {
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: var(--font-sm);
+  opacity: 0.8;
+}
+
+/* ===== شاشة الاستبيان ===== */
+#survey-screen {
+  background-color: var(--background-color);
+  padding: var(--space-2xl) 0;
+}
+
+.survey-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.survey-header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  justify-content: center;
+}
+
+.progress-bar {
+  flex: 1;
+  max-width: 400px;
+  height: 8px;
+  background-color: var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  border-radius: var(--radius-xl);
+  transition: width var(--transition-slow);
+  width: 0%;
+}
+
+.progress-text {
+  font-weight: 600;
+  color: var(--text-secondary);
+  min-width: 50px;
+}
+
+.questions-container {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-xl);
+}
+
+.question {
+  display: none;
+  animation: fadeIn 0.5s ease;
+}
+
+.question.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.question h3 {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.option-card {
+  background-color: var(--surface-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.option-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
+}
+
+.option-card.selected {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.option-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.option-card.selected i {
+  color: var(--primary-color);
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background-color: var(--surface-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.option-item:hover {
+  border-color: var(--primary-color);
+  transform: translateX(-5px);
+}
+
+.option-item.selected {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-color: var(--primary-color);
+}
+
+.option-item input[type="radio"] {
+  display: none;
+}
+
+.option-item label {
+  cursor: pointer;
+  font-weight: 500;
+  flex: 1;
+}
+
+.slider-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: var(--space-lg) 0;
+}
+
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: var(--radius-xl);
+  background: var(--border-color);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-md);
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.survey-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ===== شاشة النتائج ===== */
+#results-screen {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xl) 0;
+}
+
+.results-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  text-align: center;
+}
+
+.results-header {
+  margin-bottom: var(--space-2xl);
+}
+
+.success-animation {
+  margin-bottom: var(--space-lg);
+}
+
+.success-animation i {
+  font-size: 4rem;
+  color: var(--secondary-color);
+  animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+.path-summary {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.path-icon {
+  margin-bottom: var(--space-lg);
+}
+
+.path-icon i {
+  font-size: 3rem;
+  color: var(--primary-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.path-summary h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.path-summary p {
+  margin-bottom: var(--space-xl);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.path-details {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.detail-label {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.detail-value {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* ===== لوحة التحكم ===== */
+#dashboard-screen {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* شريط التنقل العلوي */
+.navbar {
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  max-width: 5000px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: var(--font-xl);
+  color: var(--primary-color);
+}
+
+.logo i {
+  font-size: 1.5rem;
+}
+
+.brand-subtitle {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin-right: var(--space-md);
+}
+
+.nav-search {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 var(--space-lg);
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-container i {
+  position: absolute;
+  right: var(--space-md);
+  color: var(--text-secondary);
+}
+
+.search-container input {
+  width: 100%;
+  padding: var(--space-md) var(--space-xl) var(--space-md) var(--space-md);
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-family: inherit;
+  color: var(--text-primary);
+  transition: all var(--transition-normal);
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.nav-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.nav-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 4px;
+  background: none;
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-lg);
+}
+
+.nav-action-btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+/* المحتوى الرئيسي */
+.dashboard-main {
+  display: flex;
+  flex: ;
+  max-width: 5000px;
+  margin: auto;
+  width: 100%;
+  padding: var(--space-lg);
+  gap: var(--space-lg);
+}
+
+/* الشريط الجانبي */
+.sidebar {
+  width: 400px;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.sidebar-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.sidebar-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: none;
+  border: none;
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-family: inherit;
+  font-size: var(--font-md);
+  text-align: right;
+}
+
+.sidebar-tab:hover {
+  background-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.sidebar-tab.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+}
+
+.sidebar-tab i {
+  font-size: var(--font-lg);
+}
+
+.user-progress {
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: var(--background-color);
+  border-radius: var(--radius-lg);
+}
+
+.user-progress h4 {
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.progress-circle {
+  margin: var(--space-lg) auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color) 25%, var(--border-color) 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-color: var(--surface-color);
+  border-radius: 50%;
+}
+
+.circle {
+  position: relative;
+  z-index: 1;
+}
+
+.progress-percent {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.user-progress p {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* منطقة المحتوى */
+.content-area {
+  flex: 1;
+  background-color: var(--surface-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.content-section {
+  display: none;
+  padding: var(--space-xl);
+  height: 100%;
+  overflow-y: auto;
+}
+
+.content-section.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+.section-header {
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.section-header h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.section-header h2 i {
+  color: var(--primary-color);
+}
+
+.section-header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+.filters-container {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.filter-group select {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  color: var(--text-primary);
+  transition: all var(--transition-normal);
+  min-width: 150px;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* بطاقات المحتوى */
+.card {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.card-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-logo i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.card-title {
+  flex: 1;
+}
+
+.card-title h4 {
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.card-title p {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.card-badge {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: 600;
+}
+
+.card-body {
+  padding: var(--space-lg);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.card-description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.card-features {
+  list-style: none;
+}
+
+.card-features li {
+  padding: var(--space-xs) 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.card-features li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.card-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: space-between;
+  align-items: center;
+
+text-align:center;
+text-color:gold;
+}
+
+.card-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* ===== النوافذ المنبثقة ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+.modal.active {
+  display: flex;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--surface-color);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-hover);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.modal-header h3 {
+  margin-bottom: 0;
+  color: var(--text-primary);
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  font-size: var(--font-xl);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.close-modal:hover {
+  color: var(--text-primary);
+}
+
+.modal-body {
+  padding: var(--space-lg);
+}
+
+.modal-platform-info {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.platform-logo {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: var(--radius-lg);
+  background-color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.platform-logo i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.platform-details {
+  flex: 1;
+}
+
+.platform-features {
+  margin: var(--space-lg) 0;
+}
+
+.platform-features h4 {
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.platform-features ul {
+  list-style: none;
+}
+
+.platform-features li {
+  padding: var(--space-xs) 0;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.platform-features li::before {
+  content: '•';
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.platform-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.spec-label {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+}
+
+.spec-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modal-footer {
+  padding: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end;
+}
+
+/* نافذة الاختبار */
+.quiz-content {
+  max-width: 700px;
+}
+
+.quiz-progress {
+  margin-bottom: var(--space-xl);
+}
+
+.quiz-question h4 {
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.quiz-option {
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.quiz-option:hover {
+  border-color: var(--primary-color);
+}
+
+.quiz-option.selected {
+  background-color: rgba(52, 152, 219, 0.1);
+  border-color: var(--primary-color);
+}
+
+/* نتائج الاختبار */
+.quiz-results {
+  text-align: center;
+}
+
+.result-score {
+  margin-bottom: var(--space-xl);
+}
+
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(var(--secondary-color) 75%, var(--border-color) 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-lg);
+  position: relative;
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: var(--surface-color);
+  border-radius: 50%;
+}
+
+#score-percent {
+  position: relative;
+  z-index: 1;
+  font-weight: 700;
+  font-size: var(--font-xl);
+  color: var(--text-primary);
+}
+
+.result-details {
+  text-align: right;
+}
+
+.result-breakdown {
+  margin-top: var(--space-lg);
+}
+
+.result-breakdown h5 {
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+/* ===== Toast للإشعارات ===== */
+.toast {
+  position: fixed;
+  bottom: var(--space-xl);
+  left: var(--space-xl);
+  background-color: var(--surface-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-hover);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  z-index: 1100;
+  transform: translateX(-150%);
+  transition: transform var(--transition-normal);
+}
+
+.toast.show {
+  transform: translateX(0);
+}
+
+.toast-icon {
+  color: var(--secondary-color);
+  font-size: var(--font-lg);
+}
+
+.toast-message {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ===== التذييل ===== */
+.main-footer {
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xl);
+}
+
+.footer-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700;
+  font-size: var(--font-lg);
+  color: var(--primary-color);
+  margin-bottom: var(--space-md);
+}
+
+.footer-logo i {
+  font-size: 1.5rem;
+}
+
+.footer-info p {
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-copyright {
+  text-align: center;
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: var(--font-sm);
+}
+
+/* ===== التجاوب مع الشاشات المختلفة ===== */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .sidebar-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .user-progress {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-4xl: 1.875rem;
+    --font-3xl: 1.5rem;
+    --font-2xl: 1.25rem;
+  }
+  
+  .welcome-container {
+    padding: var(--space-lg);
+  }
+  
+  .logo-animation h1 {
+    font-size: 2.5rem;
+  }
+  
+  .welcome-title {
+    font-size: 1.75rem;
+  }
+  
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .nav-search {
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .sidebar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sidebar-tabs {
+    flex-direction: column;
+  }
+  
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter-group {
+    justify-content: space-between;
+  }
+  
+  .modal-platform-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .platform-logo {
+    align-self: center;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .path-details {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+  
+  .survey-nav {
+    flex-direction: column;
+  }
+  
+  .results-actions {
+    flex-direction: column;
+  }
+  
+  .modal {
+    padding: var(--space-md);
+  }
+  
+  .modal-content {
+    max-height: 95vh;
+  }
+}
+
+/* ===== تحسينات الوضع الداكن ===== */
+body.dark-mode .card {
+  background-color: var(--dark-surface);
+}
+
+body.dark-mode .search-container input {
+  background-color: var(--dark-background);
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .filter-group select {
+  background-color: var(--dark-background);
+  color: var(--dark-text-primary);
+}
+
+body.dark-mode .quiz-option {
+  background-color: var(--dark-background);
+}
+
+/* ===== تأثيرات إضافية ===== */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+/* ===== إدارة عرض الشاشات ===== */
+.screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.screen.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ===== إدارة النوافذ المنبثقة ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.modal.active {
+    display: flex;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--surface-color);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-hover);
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===== إدارة أقسام المحتوى في Dashboard ===== */
+.content-section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.content-section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: sectionFadeIn 0.4s ease;
+}
+
+/* ===== إدارة الأسئلة في الاستبيان ===== */
+.question {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s ease;
+}
+
+.question.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+    animation: questionSlideIn 0.4s ease;
+}
+
+/* ===== منع التمرير عندما تكون النوافذ مفتوحة ===== */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ===== تحسينات للشاشات الصغيرة ===== */
+@media (max-width: 768px) {
+    .modal {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 95vh;
+    }
+    
+    .screen {
+        position: relative;
+        min-height: 100vh;
+    }
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalFadeIn {
+    from { 
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(0);
+    }
+    to { 
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+    }
+}
+
+@keyframes sectionFadeIn {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes questionSlideIn {
+    from { 
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===== تحسينات للأزرار والتبويبات ===== */
+.sidebar-tab {
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-tab::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.sidebar-tab:hover::after {
+    left: 100%;
+}
+
+/* ===== تحسينات الأداء ===== */
+* {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.card, .btn, .option-card {
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+</style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+ 
+  
+     
+
+
+    <!-- لوحة التحكم -->
+    <section id="dashboard-screen" class="screen">
+        <!-- شريط التنقل العلوي -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>دليـلك</span>
+                    </div>
+                    <span class="brand-subtitle">المستشار التعليمي الرقمي</span>
+                </div>
+
+                <div class="nav-search">
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="global-search" placeholder="ابحث في المنصات والأدوات...">
+                    </div>
+                </div>
+
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="nav-action-btn" title="تبديل الوضع">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="favorites-btn" class="nav-action-btn" title="المفضلة">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button id="profile-btn" class="nav-action-btn" title="الملف الشخصي">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="dashboard-main">
+            <!-- الشريط الجانبي -->
+            <aside class="sidebar">
+                <div class="sidebar-tabs">
+                    <button class="sidebar-tab active" data-tab="learning">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>التعلم</span>
+                    </button>
+                    <button class="sidebar-tab" data-tab="tools">
+                        <i class="fas fa-tools"></i>
+                        <span>الأدوات</span>
+                    </button>
+                    <button class="sidebar-tab" data-tab="tests">
+                        <i class="fas fa-clipboard-check"></i>
+                        <span>الاختبارات</span>
+                    </button>
+                    <button class="sidebar-tab" data-tab="jobs">
+                        <i class="fas fa-briefcase"></i>
+                        <span>العمل</span>
+                    </button>
+                </div>
+
+                <div class="user-progress">
+                    <h4>تقدمك في المسار</h4>
+                    <div class="progress-circle">
+                        <div class="circle">
+                            <span class="progress-percent">25%</span>
+                        </div>
+                    </div>
+                    <p>أنت في بداية رحلتك، استمر!</p>
+                </div>
+            </aside>
+
+            <!-- منطقة المحتوى -->
+            <div class="content-area">
+                <!-- قسم التعلم -->
+                <div class="content-section active" id="learning-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-graduation-cap"></i> مصادر التعليم الذاتي المجاني مع شهادات معتمدة</h2>
+                        <p>اكتشف أفضل المنصات التعليمية العربية والعالمية المجانية التي تقدم محتوى تعليمي عالي الجودة مع إمكانية الحصول على شهادات معتمدة.</p>
+                    </div>
+
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label>التصنيف:</label>
+                            <select id="learning-category">
+                                <option value="all">جميع التصنيفات</option>
+                                <option value="programming">البرمجة والتطوير</option>
+                                <option value="design">التصميم والفنون</option>
+                                <option value="business">إدارة الأعمال</option>
+                                <option value="languages">اللغات</option>
+                                <option value="ai">الذكاء الاصطناعي</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>اللغة:</label>
+                            <select id="learning-language">
+                                <option value="all">جميع اللغات</option>
+                                <option value="arabic">العربية</option>
+                                <option value="english">الإنجليزية</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>المستوى:</label>
+                            <select id="learning-level">
+                                <option value="all">جميع المستويات</option>
+                                <option value="beginner">مبتدئ</option>
+                                <option value="intermediate">متوسط</option>
+                                <option value="advanced">متقدم</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="learning-cards">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+
+                <!-- قسم الأدوات -->
+                <div class="content-section" id="tools-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-tools"></i> كل أدوات الذكاء الاصطناعي والإنتاج المجانية</h2>
+                        <p>اكتشف مجموعة شاملة من الأدوات المجانية التي تساعدك في الإنتاج والإبداع في مختلف المجالات، من تصميم وكتابة وبرمجة وتنظيم.</p>
+                    </div>
+
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label>التصنيف:</label>
+                            <select id="tools-category">
+                                <option value="all">جميع التصنيفات</option>
+                                <option value="writing">الكتابة والمحتوى</option>
+                                <option value="design">التصميم</option>
+                                <option value="audio">الصوت</option>
+                                <option value="code">البرمجة</option>
+                                <option value="organization">التنظيم</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="tools-cards">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+
+                <!-- قسم الاختبارات -->
+                <div class="content-section" id="tests-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-clipboard-check"></i> اختبر مهاراتك واحصل على تقييم أو شهادة مجانية</h2>
+                        <p>اختبر معرفتك ومهاراتك في مختلف المجالات عبر منصات الاختبارات الموثوقة، واحصل على تقييم فوري وشهادات تعزز ملفك الشخصي.</p>
+                    </div>
+
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label>المجال:</label>
+                            <select id="tests-field">
+                                <option value="all">جميع المجالات</option>
+                                <option value="programming">البرمجة</option>
+                                <option value="languages">اللغات</option>
+                                <option value="ai">الذكاء الاصطناعي</option>
+                                <option value="marketing">التسويق</option>
+                                <option value="personality">الشخصية</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>المستوى:</label>
+                            <select id="tests-level">
+                                <option value="all">جميع المستويات</option>
+                                <option value="beginner">مبتدئ</option>
+                                <option value="intermediate">متوسط</option>
+                                <option value="advanced">متقدم</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="tests-cards">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+
+                <!-- قسم العمل -->
+                <div class="content-section" id="jobs-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-briefcase"></i> ابدأ رحلتك في العمل الحر والتوظيف عن بعد</h2>
+                        <p>اكتشف أفضل منصات العمل الحر والتوظيف عن بعد المحلية والعالمية، وابدأ في بناء مسارك المهني وتحقيق دخل مستدام من مهاراتك.</p>
+                    </div>
+
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label>نوع العمل:</label>
+                            <select id="jobs-type">
+                                <option value="all">جميع أنواع العمل</option>
+                                <option value="writing">الكتابة والترجمة</option>
+                                <option value="design">التصميم</option>
+                                <option value="programming">البرمجة</option>
+                                <option value="marketing">التسويق</option>
+                                <option value="management">الإدارة</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label>الموقع:</label>
+                            <select id="jobs-location">
+                                <option value="all">جميع المواقع</option>
+                                <option value="local">محلي</option>
+                                <option value="international">دولي</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cards-grid" id="jobs-cards">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- نافذة تفاصيل المنصة -->
+    <div id="platform-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">اسم المنصة</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-platform-info">
+                    <div class="platform-logo">
+                        <img id="modal-logo" src="" alt="شعار المنصة">
+                    </div>
+                    <div class="platform-details">
+                        <p id="modal-description">وصف المنصة</p>
+                        <div class="platform-features">
+                            <h4>المميزات:</h4>
+                            <ul id="modal-features">
+                                <!-- سيتم ملؤها ديناميكيًا -->
+                            </ul>
+                        </div>
+                        <div class="platform-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">الشهادات:</span>
+                                <span class="spec-value" id="modal-certificates">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">المستوى:</span>
+                                <span class="spec-value" id="modal-level">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">التكلفة:</span>
+                                <span class="spec-value" id="modal-cost">-</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">اللغة:</span>
+                                <span class="spec-value" id="modal-lang">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">إغلاق</button>
+                <a href="#" id="modal-link" target="_blank" class="btn-primary">تصفح المنصة <i class="fas fa-external-link-alt"></i></a>
+                <button class="btn-favorite" id="modal-favorite">
+                    <i class="far fa-heart"></i> إضافة إلى المفضلة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة المفضلة -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>المفضلة</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="favorites-list">
+                    <!-- سيتم ملؤها ديناميكيًا -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة الملف الشخصي -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>الملف الشخصي</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-info">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="profile-details">
+                        <h4>المستخدم</h4>
+                        <p>مسارك الحالي: <span id="profile-path">مسار تطوير مهارات العمل عن بعد</span></p>
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">12</span>
+                                <span class="stat-label">منصة مفضلة</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">اختبارات مكتملة</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">25%</span>
+                                <span class="stat-label">إكمال المسار</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-interests">
+                    <h4>اهتماماتك</h4>
+                    <div class="interests-list">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">إغلاق</button>
+                <button class="btn-primary" id="edit-profile">تعديل الملف</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة اختبار -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content quiz-content">
+            <div class="modal-header">
+                <h3 id="quiz-title">اختبار المهارات</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="quiz-progress"></div>
+                    </div>
+                    <span class="progress-text" id="quiz-progress-text">1/10</span>
+                </div>
+                <div class="quiz-question">
+                    <h4 id="question-text">السؤال يظهر هنا</h4>
+                    <div class="quiz-options" id="quiz-options">
+                        <!-- سيتم ملؤها ديناميكيًا -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="quiz-prev">السابق</button>
+                <button class="btn-primary" id="quiz-next">التالي</button>
+                <button class="btn-success" id="quiz-submit" style="display: none;">إنهاء الاختبار</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة نتائج الاختبار -->
+    <div id="quiz-results-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>نتيجة الاختبار</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="quiz-results">
+                    <div class="result-score">
+                        <div class="score-circle">
+                            <span id="score-percent">75%</span>
+                        </div>
+                        <h4>مستوى جيد!</h4>
+                    </div>
+                    <div class="result-details">
+                        <p id="result-message">أظهرت فهمًا جيدًا للمفاهيم الأساسية، لكن هناك مجال للتحسين في بعض المجالات.</p>
+                        <div class="result-breakdown">
+                            <h5>تفصيل النتائج:</h5>
+                            <div id="result-breakdown">
+                                <!-- سيتم ملؤها ديناميكيًا -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary close-modal">إغلاق</button>
+                <button class="btn-primary" id="retake-quiz">إعادة الاختبار</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast للإشعارات -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">تمت الإضافة إلى المفضلة بنجاح!</span>
+        </div>
+    </div>
+
+    <!-- التذييل -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>دليـلك</span>
+                </div>
+                <p>المستشار التعليمي والعملي الذكي - هدية من المهندس أسامة العُمري</p>
+                <p>هاتف: 711666863 - البريد: osamah771998@gmail.com</p>
+            </div>
+           
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025 دليـلك - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+// ===== بيانات التطبيق الكاملة =====
+const appData = {
+    // بيانات المستخدم
+    user: {
+        name: "المستخدم",
+        interests: [],
+        path: "",
+        progress: 25,
+        favorites: JSON.parse(localStorage.getItem('favorites')) || [],
+        testResults: []
+    },
+
+    // بيانات الاستبيان
+    survey: {
+        currentQuestion: 1,
+        totalQuestions: 6,
+        answers: {},
+        progress: 0
+    },
+
+    // بيانات الاختبارات
+    quiz: {
+        currentQuestion: 0,
+        score: 0,
+        totalQuestions: 0,
+        questions: [],
+        userAnswer: null
+    },
+
+    // بيانات المنصات الكاملة
+    platforms: {
+        learning: [
+            {
+                id: 1,
+                name: "إدراك (Edraak)",
+                category: "programming",
+                language: "arabic",
+                level: "beginner",
+                description: "منصة عربية غير ربحية برعاية مؤسسة الملكة رانيا تقدم مساقات MOOCs عالية الجودة في تخصصات متنوعة.",
+                features: ["أكثر من 300 دورة مجانية", "محتوى حصري ومدربون مميزون", "إمكانية تنزيل الفيديوهات"],
+                certificates: "شهادات إتمام مجانية",
+                cost: "مجاني",
+                logo: "fas fa-graduation-cap",
+                url: "https://www.edraak.org/",
+                favorite: false
+            },
+            {
+                id: 2,
+                name: "شهادات جوجل المهنية (Coursera)",
+                category: "programming",
+                language: "both",
+                level: "beginner",
+                description: "تدريب مهني مكثف في مجالات مطلوبة بالسوق مثل الأمن السيبراني، تحليل البيانات، إدارة المشاريع.",
+                features: ["تركيز على مهارات سوق العمل", "مناسب للتوظيف وفرص عالية النمو", "المحتوى مجاني للمراجعة"],
+                certificates: "شهادات مدفوعة (المحتوى مجاني)",
+                cost: "مجاني للمحتوى",
+                logo: "fas fa-certificate",
+                url: "https://grow.google/intl/mena/google-career-certificates/",
+                favorite: false
+            },
+            {
+                id: 3,
+                name: "دروب (Doroob)",
+                category: "business",
+                language: "arabic",
+                level: "beginner",
+                description: "برنامج تدريب إلكتروني حكومي يهدف لتطوير مهارات الأفراد لسوق العمل السعودي.",
+                features: ["دورات ومسارات تدريبية معتمدة", "التحقق من الشهادة عبر الموقع الحكومي", "قد يتطلب نفاذ للتسجيل"],
+                certificates: "شهادات معتمدة",
+                cost: "مجاني",
+                logo: "fas fa-laptop-code",
+                url: "https://doroob.sa/ar/employer/certifications/",
+                favorite: false
+            },
+            {
+                id: 4,
+                name: "معارف (M3aarf)",
+                category: "languages",
+                language: "arabic",
+                level: "intermediate",
+                description: "دورات في الإنجليزية والتسويق وإدارة الأعمال بالتعاون مع أكاديميات ومؤثرين.",
+                features: ["دورات بشهادات يمكن التحقق منها", "محتوى مجاني بالكامل في كثير من المساقات"],
+                certificates: "شهادات معتمدة",
+                cost: "مجاني",
+                logo: "fas fa-book-open",
+                url: "https://www.m3aarf.com/certified/courses",
+                favorite: false
+            },
+            {
+                id: 5,
+                name: "FutureX",
+                category: "programming",
+                language: "arabic",
+                level: "intermediate",
+                description: "منظومة للتعليم والتدريب الرقمي تقدم برامج قصيرة معتمدة (MicroX).",
+                features: ["محتوى تقني معتمد", "يركز على المهارات المستقبلية"],
+                certificates: "شهادات معتمدة",
+                cost: "مجاني",
+                logo: "fas fa-rocket",
+                url: "https://futurex.nelc.gov.sa/",
+                favorite: false
+            },
+            {
+                id: 6,
+                name: "رواق (Rwaq)",
+                category: "programming",
+                language: "arabic",
+                level: "intermediate",
+                description: "مواد أكاديمية مجانية في مجالات شتى مع مجتمع تفاعلي ومحاضرات مرئية.",
+                features: ["مقررات دراسية مكثفة", "مجتمع تفاعلي"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني",
+                logo: "fas fa-chalkboard-teacher",
+                url: "https://www.rwaq.org/",
+                favorite: false
+            },
+            {
+                id: 7,
+                name: "الجامعة العربية المفتوحة — المنصة التعليمية",
+                category: "programming",
+                language: "arabic",
+                level: "intermediate",
+                description: "منصة افتراضية تقدم مقررات في الحاسب، إدارة الأعمال، والدراسات اللغوية بدون تكلفة.",
+                features: ["مقررات جامعية أولية", "محتوى مؤصل وجودة أكاديمية"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني",
+                logo: "fas fa-university",
+                url: "https://www.arabou.edu.sa/ar/faculties/language/Pages/Open-Education-Platform.aspx",
+                favorite: false
+            },
+            {
+                id: 8,
+                name: "Stanford Online — Free Courses",
+                category: "programming",
+                language: "english",
+                level: "advanced",
+                description: "دورات في الهندسة والذكاء الاصطناعي والعلوم الصحية من خبراء ستانفورد.",
+                features: ["تعلم من محاضرين جامعيين", "محتوى متقدم"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني",
+                logo: "fas fa-graduation-cap",
+                url: "https://online.stanford.edu/free-courses",
+                favorite: false
+            },
+            {
+                id: 9,
+                name: "Alison",
+                category: "programming",
+                language: "english",
+                level: "beginner",
+                description: "آلاف الدورات مع تركيز قوي على تكنولوجيا المعلومات والتحضير لشهادات مهنية.",
+                features: ["دورات مجانية", "الشهادات الرسمية مدفوعة عادة"],
+                certificates: "شهادات مدفوعة",
+                cost: "مجاني للمحتوى",
+                logo: "fas fa-book",
+                url: "https://alison.com/courses/it",
+                favorite: false
+            },
+            {
+                id: 10,
+                name: "edX (Free Audit)",
+                category: "programming",
+                language: "english",
+                level: "intermediate",
+                description: "الوصول لمحتوى جامعي من هارفارد وMIT وغيرها — Audit مجاني.",
+                features: ["مواد ودروس مجانية", "الشهادات الرسمية مدفوعة"],
+                certificates: "شهادات مدفوعة",
+                cost: "مجاني للمحتوى",
+                logo: "fas fa-laptop",
+                url: "https://www.edx.org/",
+                favorite: false
+            },
+            {
+                id: 11,
+                name: "أكاديمية حسوب",
+                category: "programming",
+                language: "arabic",
+                level: "intermediate",
+                description: "دورات ومقالات عميقة لمطوري الويب والعمل الحر.",
+                features: ["محتوى عربي متقدم", "تركيز على البرمجة والعمل الحر"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني جزئي",
+                logo: "fas fa-code",
+                url: "https://academy.hsoub.com/",
+                favorite: false
+            },
+            {
+                id: 12,
+                name: "British Council — Learn English",
+                category: "languages",
+                language: "english",
+                level: "all",
+                description: "موارد مجانية لتعلم الإنجليزية مع دورات وموارد لتحسين القواعد والمفردات والاستماع.",
+                features: ["موارد تعليمية مجانية", "مواد مناسبة للمبتدئين والمحترفين"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني",
+                logo: "fas fa-language",
+                url: "https://www.britishcouncil.org/",
+                favorite: false
+            },
+            {
+                id: 13,
+                name: "freeCodeCamp",
+                category: "programming",
+                language: "english",
+                level: "beginner",
+                description: "تعلم البرمجة بالمشاريع والشهادات المجانية عبر مسارات تعلم عملية.",
+                features: ["شهادات مجانية", "مسارات: تطوير الويب، علوم البيانات"],
+                certificates: "شهادات مجانية",
+                cost: "مجاني",
+                logo: "fas fa-free-code-camp",
+                url: "https://www.freecodecamp.org/",
+                favorite: false
+            },
+            {
+                id: 14,
+                name: "أكاديمية خان (Khan Academy)",
+                category: "programming",
+                language: "both",
+                level: "beginner",
+                description: "دروس وتمارين تفاعلية مجاناً في الرياضيات، العلوم، البرمجة، والاقتصاد.",
+                features: ["تتبّع التقدّم", "محتوى مجاني بالكامل"],
+                certificates: "شهادات إتمام",
+                cost: "مجاني",
+                logo: "fas fa-chalkboard",
+                url: "https://ar.khanacademy.org/",
+                favorite: false
+            }
+        ],
+        tools: [
+            {
+                id: 1,
+                name: "Trello",
+                category: "organization",
+                description: "نظام إدارة مشاريع بنمط كانبان مع أتمتة بسيطة وتكامل مع أدوات أخرى.",
+                features: ["لوحات وبطاقات غير محدودة", "No-Code Automation"],
+                cost: "مجاني",
+                logo: "fab fa-trello",
+                url: "https://trello.com/",
+                favorite: false
+            },
+            {
+                id: 2,
+                name: "Asana",
+                category: "organization",
+                description: "أداة إدارة مهام وفرق مع إدارة مهام وتقارير والتعاون بين الفريق.",
+                features: ["حتى 15 مستخدماً بالخطة المجانية", "تعاون متقدم"],
+                cost: "خطة مجانية",
+                logo: "fas fa-tasks",
+                url: "https://asana.com/",
+                favorite: false
+            },
+            {
+                id: 3,
+                name: "Notion",
+                category: "organization",
+                description: "مساحة عمل شاملة وقواعد بيانات لتنظيم ملاحظات وإدارة المشاريع.",
+                features: ["مرونة عالية في التنظيم", "قواعد بيانات قوية"],
+                cost: "مجاني فردي",
+                logo: "fas fa-sticky-note",
+                url: "https://www.notion.so/",
+                favorite: false
+            },
+            {
+                id: 4,
+                name: "Google Drive",
+                category: "organization",
+                description: "تخزين سحابي وتحرير تعاوني مع مشاركة مستندات وتعاون في الوقت الفعلي.",
+                features: ["15 جيجابايت مجاني", "تحرير مستندات وجداول عروض"],
+                cost: "15GB مجاني",
+                logo: "fab fa-google-drive",
+                url: "https://www.google.com/drive/",
+                favorite: false
+            },
+            {
+                id: 5,
+                name: "Canva",
+                category: "design",
+                description: "أداة تصميم جرافيكي سهلة مع آلاف القوالب الجاهزة.",
+                features: ["آلاف القوالب", "إصدار مجاني قوي"],
+                cost: "مجاني",
+                logo: "fab fa-canva",
+                url: "https://www.canva.com/",
+                favorite: false
+            },
+            {
+                id: 6,
+                name: "Slack",
+                category: "organization",
+                description: "منصة اتصال احترافية للفرق مع قنوات مخصصة وتكامل مع أدوات الإنتاجية.",
+                features: ["10,000 رسالة للبحث بالخطة المجانية", "إدارة محادثات العمل"],
+                cost: "خطة مجانية",
+                logo: "fab fa-slack",
+                url: "https://slack.com/",
+                favorite: false
+            },
+            {
+                id: 7,
+                name: "Microsoft Teams",
+                category: "organization",
+                description: "تعاون متكامل مع مايكروسوفت 365 مع دردشة، مكالمات، ومشاركة مستندات.",
+                features: ["تكامل مع Word وExcel Online", "تعاون في الوقت الفعلي"],
+                cost: "خطة مجانية",
+                logo: "fas fa-users",
+                url: "https://www.microsoft.com/en-us/microsoft-teams/",
+                favorite: false
+            },
+            {
+                id: 8,
+                name: "Zapier",
+                category: "organization",
+                description: "أتمتة سير العمل بين التطبيقات مع ربط آلاف التطبيقات لأتمتة المهام المتكررة بدون كود.",
+                features: ["أتمتة بسيطة وسهلة", "تكامل مع آلاف التطبيقات"],
+                cost: "خطة مجانية",
+                logo: "fas fa-random",
+                url: "https://zapier.com/",
+                favorite: false
+            },
+            {
+                id: 9,
+                name: "Jira",
+                category: "organization",
+                description: "تعقب القضايا وإدارة مشاريع Agile مع لوحات Scrum وKanban وتقارير قوية.",
+                features: ["مجاني حتى 10 مستخدمين", "أتمتة للعمل"],
+                cost: "مجاني محدود",
+                logo: "fab fa-jira",
+                url: "https://www.atlassian.com/software/jira",
+                favorite: false
+            },
+            {
+                id: 10,
+                name: "Clockify",
+                category: "organization",
+                description: "تتبع الوقت والإنتاجية مع تعقب ساعات العمل وإنتاج تقارير زمنية.",
+                features: ["تتبع زمني دقيق", "تقارير مفصلة"],
+                cost: "مجاني بالكامل",
+                logo: "fas fa-clock",
+                url: "https://clockify.me/",
+                favorite: false
+            },
+            {
+                id: 11,
+                name: "Evernote",
+                category: "organization",
+                description: "تدوين الملاحظات وتنظيمها مع مزامنة عبر جهازين بالخطة المجانية.",
+                features: ["بحث قوي داخل الملاحظات", "مزامنة محدودة مجانية"],
+                cost: "خطة مجانية محدودة",
+                logo: "fas fa-note-sticky",
+                url: "https://evernote.com/",
+                favorite: false
+            },
+            {
+                id: 12,
+                name: "Visual Studio Code",
+                category: "code",
+                description: "محرر أكواد مجاني وقوي مع تصحيح أخطاء مدمج و Git مدمج وآلاف الإضافات.",
+                features: ["مفتوح المصدر", "آلاف الإضافات"],
+                cost: "مجاني",
+                logo: "fas fa-code",
+                url: "https://code.visualstudio.com/",
+                favorite: false
+            },
+            {
+                id: 13,
+                name: "Figma",
+                category: "design",
+                description: "تصميم واجهات وتعاون في الوقت الحقيقي مع مكتبات مكونات قابلة لإعادة الاستخدام.",
+                features: ["تصميم تفاعلي", "مشاركة في الوقت الحقيقي"],
+                cost: "خطة مجانية",
+                logo: "fab fa-figma",
+                url: "https://www.figma.com/",
+                favorite: false
+            }
+        ],
+        tests: [
+            {
+                id: 1,
+                name: "16Personalities",
+                field: "personality",
+                level: "all",
+                description: "اختبار الشخصية (MBTI) مع تحليل لنمط شخصيتك وخلاصة نقاط القوة والضعف المهنية.",
+                features: ["تقرير تفصيلي لـ 5 جوانب", "مناسب لتوجيه المسار المهني"],
+                cost: "مجاني",
+                logo: "fas fa-user",
+                url: "https://www.16personalities.com/ar/%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1-%D8%A7%D9%84%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9",
+                favorite: false
+            },
+            {
+                id: 2,
+                name: "Cambridge — Test Your English",
+                field: "languages",
+                level: "all",
+                description: "اختبارات تقييمية سريعة للإنجليزية مع تقييم سريع لمستوى اللغة (A1–C2) بنتيجة فورية.",
+                features: ["نتيجة فورية", "تقييم دقيق للمستوى"],
+                cost: "مجاني",
+                logo: "fas fa-language",
+                url: "https://www.cambridgeenglish.org/test-your-english/",
+                favorite: false
+            },
+            {
+                id: 3,
+                name: "CareerExplorer",
+                field: "personality",
+                level: "all",
+                description: "مستكشف المهن — اختبار شامل يساعدك في إيجاد المهنة الأنسب من بين 800+ مهنة.",
+                features: ["تحليل توافق مهني واسع", "توصيات مخصصة"],
+                cost: "مجاني",
+                logo: "fas fa-briefcase",
+                url: "https://www.careerexplorer.com/",
+                favorite: false
+            },
+            {
+                id: 4,
+                name: "Codecademy — Diagnostic Tests",
+                field: "programming",
+                level: "all",
+                description: "اختبارات تشخيصية للغات برمجة مثل Python، SQL، وغيرها قبل بدء المسار.",
+                features: ["تقييم المهارات البرمجية", "تحديد المستوى المناسب"],
+                cost: "مجاني",
+                logo: "fas fa-laptop-code",
+                url: "https://www.codecademy.com/",
+                favorite: false
+            },
+            {
+                id: 5,
+                name: "Microsoft — Exam Readiness",
+                field: "programming",
+                level: "intermediate",
+                description: "مواد مجانية للتحضير لشهادات مايكروسوفت مع وحدات دراسية ومختبرات افتراضية.",
+                features: ["تحضير للشهادات المهنية", "مختبرات افتراضية"],
+                cost: "مجاني",
+                logo: "fab fa-microsoft",
+                url: "https://learn.microsoft.com/en-us/credentials/certifications/",
+                favorite: false
+            },
+            {
+                id: 6,
+                name: "LeetCode",
+                field: "programming",
+                level: "intermediate",
+                description: "تحديات برمجية للتحضير للمقابلات مع آلاف التمارين ومحرر أكواد ونظام تقييم فوري.",
+                features: ["آلاف التمارين", "نظام تقييم فوري"],
+                cost: "مجاني",
+                logo: "fas fa-code",
+                url: "https://leetcode.com/",
+                favorite: false
+            },
+            {
+                id: 7,
+                name: "Duolingo English Test (Demo)",
+                field: "languages",
+                level: "all",
+                description: "اختبار إنجليزي معتمد — نسخة تجريبية مجانية مع تقييم للمستوى.",
+                features: ["نسخة تجريبية مجانية", "تقييم معتمد"],
+                cost: "مجاني للتجريبي",
+                logo: "fas fa-graduation-cap",
+                url: "https://englishtest.duolingo.com/",
+                favorite: false
+            }
+        ],
+        jobs: [
+            {
+                id: 1,
+                name: "مستقل (Mostaql)",
+                type: "all",
+                location: "local",
+                description: "أكبر منصة عربية للعمل الحر مع إدارة مشاريع وعقود مضمونة وسوق عربي للمحترفين.",
+                features: ["تسجيل مجاني", "اقتطاع عمولة بعد نجاح المشروع"],
+                cost: "مجاني للتسجيل",
+                logo: "fas fa-user-tie",
+                url: "https://mostaql.com/",
+                favorite: false
+            },
+            {
+                id: 2,
+                name: "خمسات (Khamsat)",
+                type: "all",
+                location: "local",
+                description: "منصة للخدمات المصغرة تتيح بيع وشراء خدمات مصغرة بأسعار تبدأ من 5 دولارات.",
+                features: ["تسجيل مجاني", "اقتطاع عمولة عند البيع"],
+                cost: "مجاني للتسجيل",
+                logo: "fas fa-handshake",
+                url: "https://khamsat.com/",
+                favorite: false
+            },
+            {
+                id: 3,
+                name: "NoDesk",
+                type: "all",
+                location: "international",
+                description: "لوحة وظائف Remote-first تركز على الشركات التي تعتمد نظام Remote-first.",
+                features: ["وظائف عن بعد حصرية", "شركات عالمية"],
+                cost: "مجاني",
+                logo: "fas fa-laptop-house",
+                url: "https://nodesk.co/",
+                favorite: false
+            },
+            {
+                id: 4,
+                name: "We Work Remotely",
+                type: "all",
+                location: "international",
+                description: "أكبر لوحات الوظائف البعيدة مع آلاف الإعلانات المتجددة من شركات عالمية.",
+                features: ["آلاف الوظائف البعيدة", "شركات معروفة"],
+                cost: "مجاني",
+                logo: "fas fa-globe",
+                url: "https://weworkremotely.com/",
+                favorite: false
+            },
+            {
+                id: 5,
+                name: "Remote OK",
+                type: "all",
+                location: "international",
+                description: "لوحة وظائف عن بعد مع فلاتر متقدمة حسب التخصص والراتب وتحديثات متكررة.",
+                features: ["فلاتر متقدمة", "تحديثات متكررة"],
+                cost: "مجاني",
+                logo: "fas fa-wifi",
+                url: "https://remoteok.com/",
+                favorite: false
+            },
+            {
+                id: 6,
+                name: "Upwork",
+                type: "all",
+                location: "international",
+                description: "سوق عالمي للعمل الحر مع آلاف المشاريع ونظام ضمان دفع Escrow.",
+                features: ["تسجيل مجاني", "Connects لعرض العروض (مدفوع)"],
+                cost: "مجاني للتسجيل",
+                logo: "fas fa-briefcase",
+                url: "https://www.upwork.com/",
+                favorite: false
+            },
+            {
+                id: 7,
+                name: "Fiverr",
+                type: "all",
+                location: "international",
+                description: "سوق للخدمات المصغرة عالمياً مع بيع الخدمات الإبداعية بنظام تحديد أسعار مرن.",
+                features: ["خدمات مصغرة", "أسعار مرنة"],
+                cost: "مجاني للتسجيل",
+                logo: "fas fa-star",
+                url: "https://www.fiverr.com/",
+                favorite: false
+            },
+            {
+                id: 8,
+                name: "LinkedIn",
+                type: "all",
+                location: "international",
+                description: "شبكة مهنية وبحث عن وظائف وتوظيف مع إمكانية بناء شبكة مهنية ونشر ملف احترافي.",
+                features: ["شبكة مهنية عالمية", "بحث متقدم عن الوظائف"],
+                cost: "مجاني",
+                logo: "fab fa-linkedin",
+                url: "https://www.linkedin.com/",
+                favorite: false
+            }
+        ]
+    },
+
+    // مسارات التعلم المقترحة
+    paths: {
+        programming: {
+            title: "مسار تطوير مهارات العمل عن بعد في البرمجة والإنتاج الرقمي",
+            description: "بناءً على اهتمامك بالبرمجة ورغبتك في العمل عن بعد، نوصي بهذا المسار الذي يجمع بين التعلم النظري والتطبيق العملي عبر منصات موثوقة.",
+            level: "مبتدئ إلى متقدم",
+            time: "3-6 أشهر",
+            languages: "العربية والإنجليزية",
+            icon: "fas fa-laptop-code"
+        },
+        design: {
+            title: "مسار التصميم الجرافيكي والفنون الرقمية للعمل الحر",
+            description: "مسار متكامل لتعلم التصميم الجرافيكي والمهارات الرقمية المطلوبة في سوق العمل الحر المحلي والعالمي.",
+            level: "مبتدئ إلى متقدم",
+            time: "2-4 أشهر",
+            languages: "العربية والإنجليزية",
+            icon: "fas fa-palette"
+        },
+        languages: {
+            title: "مسار تطوير المهارات اللغوية للتوظيف الدولي",
+            description: "تركيز على تطوير المهارات اللغوية مع التركيز على الإنجليزية المهنية ومهارات الترجمة للعمل في الشركات الدولية.",
+            level: "مبتدئ إلى متقدم",
+            time: "4-8 أشهر",
+            languages: "الإنجليزية والعربية",
+            icon: "fas fa-language"
+        },
+        marketing: {
+            title: "مسار التسويق الرقمي والعمل عن بعد",
+            description: "تعلم أساسيات التسويق الرقمي والمهارات العملية المطلوبة للعمل في مجال التسويق عن بعد.",
+            level: "مبتدئ إلى متوسط",
+            time: "2-5 أشهر",
+            languages: "العربية والإنجليزية",
+            icon: "fas fa-bullhorn"
+        },
+        business: {
+            title: "مسار إدارة الأعمال والريادة للعمل الحر",
+            description: "تطوير المهارات الإدارية والريادية اللازمة لإدارة المشاريع والبدء في العمل الحر بنجاح.",
+            level: "مبتدئ إلى متوسط",
+            time: "3-6 أشهر",
+            languages: "العربية",
+            icon: "fas fa-chart-line"
+        },
+        ai: {
+            title: "مسار الذكاء الاصطناعي وتعلم الآلة",
+            description: "تعلم أساسيات الذكاء الاصطناعي وتطبيقاته العملية في سوق العمل الحديث.",
+            level: "متوسط إلى متقدم",
+            time: "4-8 أشهر",
+            languages: "الإنجليزية",
+            icon: "fas fa-robot"
+        }
+    },
+
+    // أسئلة الاختبارات
+    quizQuestions: {
+        programming: [
+            {
+                question: "ما هي لغة البرمجة التي تُستخدم principalmente لتطوير واجهات الويب؟",
+                options: ["Python", "JavaScript", "Java", "C++"],
+                correct: 1
+            },
+            {
+                question: "ماذا يعني اختصار HTML؟",
+                options: ["Hyper Text Markup Language", "High Tech Modern Language", "Hyper Transfer Markup Language", "Home Tool Markup Language"],
+                correct: 0
+            },
+            {
+                question: "أي من هذه ليست قاعدة بيانات؟",
+                options: ["MySQL", "MongoDB", "React", "PostgreSQL"],
+                correct: 2
+            }
+        ],
+        design: [
+            {
+                question: "ما هو اللون الذي ينتج عن مزج الأحمر والأزرق؟",
+                options: ["الأخضر", "البنفسجي", "البرتقالي", "الأصفر"],
+                correct: 1
+            },
+            {
+                question: "أي من هذه البرامج يستخدم principalmente لتصميم الشعارات؟",
+                options: ["Adobe Photoshop", "Adobe Illustrator", "Adobe Premiere", "Figma"],
+                correct: 1
+            }
+        ]
+    }
+};
+
+// ===== حالة التطبيق =====
+let currentScreen = 'welcome-screen';
+let currentModal = null;
+let currentSection = 'learning';
+
+// ===== تهيئة التطبيق =====
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("🚀 بدء تحميل التطبيق...");
+    
+    // تهيئة الأساسيات أولاً
+    initializeBasics();
+    
+    // تهيئة المكونات بعد تحميل DOM
+    setTimeout(() => {
+        initializeComponents();
+        restoreUserState();
+        console.log("✅ تم تحميل التطبيق بنجاح!");
+    }, 100);
+});
+
+function initializeBasics() {
+    // إدارة الوضع الداكن/الفاتح
+    initTheme();
+    
+    // إخفاء جميع الشاشات وإظهار شاشة الترحيب فقط
+    hideAllScreens();
+    showScreen('welcome-screen');
+    
+    // إغلاق جميع النوافذ
+    hideAllModals();
+}
+
+function initializeComponents() {
+    // تهيئة شاشة الترحيب
+    initWelcomeScreen();
+    
+    // تهيئة شاشة الاستبيان
+    initSurvey();
+    
+    // تهيئة شاشة النتائج
+    initResultsScreen();
+    
+    // تهيئة لوحة التحكم
+    initDashboard();
+    
+    // تهيئة النوافذ المنبثقة
+    initModals();
+    
+    // تهيئة نظام المفضلة
+    initFavorites();
+    
+    // تهيئة نظام البحث
+    initSearch();
+    
+    // تهيئة الاختبارات
+    initQuiz();
+}
+
+// ===== إدارة الشاشات =====
+function hideAllScreens() {
+    const screens = document.querySelectorAll('.screen');
+    screens.forEach(screen => {
+        screen.classList.remove('active');
+    });
+}
+
+function showScreen(screenId) {
+    // إخفاء جميع الشاشات أولاً
+    hideAllScreens();
+    
+    // إغلاق أي نوافذ مفتوحة
+    hideAllModals();
+    
+    // إظهار الشاشة المطلوبة
+    const targetScreen = document.getElementById(screenId);
+    if (targetScreen) {
+        targetScreen.classList.add('active');
+        currentScreen = screenId;
+        
+        // تحميل محتوى الشاشة إذا لزم الأمر
+        loadScreenContent(screenId);
+    }
+}
+
+function loadScreenContent(screenId) {
+    switch(screenId) {
+        case 'dashboard-screen':
+            loadDashboardContent();
+            break;
+        case 'results-screen':
+            displayResults();
+            break;
+    }
+}
+
+// ===== إدارة النوافذ المنبثقة =====
+function initModals() {
+    // إغلاق النوافذ عند النقر خارج المحتوى
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                hideAllModals();
+            }
+        });
+    });
+    
+    // أزرار إغلاق النوافذ
+    document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            hideAllModals();
+        });
+    });
+    
+    // منع انتشار الأحداث داخل النوافذ
+    document.querySelectorAll('.modal-content').forEach(content => {
+        content.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+}
+
+function showModal(modalId) {
+    // إغلاق أي نافذة مفتوحة حالياً
+    hideAllModals();
+    
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        currentModal = modalId;
+        
+        // تحميل محتوى النافذة
+        loadModalContent(modalId);
+    }
+}
+
+function hideAllModals() {
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.classList.remove('active');
+    });
+    document.body.style.overflow = 'auto';
+    currentModal = null;
+}
+
+function loadModalContent(modalId) {
+    switch(modalId) {
+        case 'profile-modal':
+            loadProfileData();
+            break;
+        case 'favorites-modal':
+            loadFavoritesContent();
+            break;
+    }
+}
+
+// ===== إدارة الوضع الداكن/الفاتح =====
+function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    
+    // تطبيق الوضع المحفوظ
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    // تبديل الوضع
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        });
+    }
+}
+
+// ===== إدارة شاشة الترحيب =====
+function initWelcomeScreen() {
+    const startBtn = document.getElementById('start-btn');
+    
+    if (startBtn) {
+        startBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showScreen('survey-screen');
+            updateProgressBar();
+        });
+    }
+}
+
+// ===== إدارة شاشة الاستبيان =====
+function initSurvey() {
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    const hoursSlider = document.getElementById('hours-slider');
+    const hoursValue = document.getElementById('hours-value');
+    
+    // تهيئة السؤال الأول
+    showQuestion(1);
+    
+    // زر التالي
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateCurrentQuestion()) {
+                const nextQuestion = appData.survey.currentQuestion + 1;
+                if (nextQuestion <= appData.survey.totalQuestions) {
+                    showQuestion(nextQuestion);
+                    updateProgressBar();
+                }
+            } else {
+                showToast('يرجى الإجابة على السؤال الحالي قبل المتابعة', 'warning');
+            }
+        });
+    }
+    
+    // زر السابق
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const prevQuestion = appData.survey.currentQuestion - 1;
+            if (prevQuestion >= 1) {
+                showQuestion(prevQuestion);
+                updateProgressBar();
+            }
+        });
+    }
+    
+    // زر الإرسال
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateCurrentQuestion()) {
+                processSurveyResults();
+                showScreen('results-screen');
+            } else {
+                showToast('يرجى الإجابة على السؤال الحالي قبل الإرسال', 'warning');
+            }
+        });
+    }
+    
+    // سلايدر الساعات
+    if (hoursSlider && hoursValue) {
+        hoursSlider.addEventListener('input', function() {
+            hoursValue.textContent = this.value + ' ساعات';
+            appData.survey.answers.hours = this.value;
+        });
+    }
+    
+    // إضافة مستمعي الأحداث للخيارات
+    initSurveyOptions();
+}
+
+function initSurveyOptions() {
+    // خيارات البطاقات (سؤال 1 و6)
+    document.querySelectorAll('.option-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const questionId = this.closest('.question').id;
+            const isMultiSelect = this.classList.contains('multi-select');
+            
+            if (isMultiSelect) {
+                // اختيار متعدد
+                this.classList.toggle('selected');
+                updateMultiSelectAnswer(questionId, this.dataset.value);
+            } else {
+                // اختيار فردي
+                const siblings = this.parentElement.querySelectorAll('.option-card');
+                siblings.forEach(sibling => sibling.classList.remove('selected'));
+                this.classList.add('selected');
+                updateSingleSelectAnswer(questionId, this.dataset.value);
+            }
+        });
+    });
+    
+    // خيارات القوائم (سؤال 2،3،5)
+    document.querySelectorAll('.option-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const radio = this.querySelector('input[type="radio"]');
+            if (radio) {
+                radio.checked = true;
+                
+                const siblings = this.parentElement.querySelectorAll('.option-item');
+                siblings.forEach(sibling => sibling.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                updateSingleSelectAnswer(this.closest('.question').id, radio.value);
+            }
+        });
+    });
+}
+
+function updateSingleSelectAnswer(questionId, value) {
+    const questionNum = questionId.split('-')[1];
+    appData.survey.answers[`q${questionNum}`] = value;
+}
+
+function updateMultiSelectAnswer(questionId, value) {
+    const questionNum = questionId.split('-')[1];
+    const key = `q${questionNum}`;
+    
+    if (!appData.survey.answers[key]) {
+        appData.survey.answers[key] = [];
+    }
+    
+    const index = appData.survey.answers[key].indexOf(value);
+    if (index > -1) {
+        appData.survey.answers[key].splice(index, 1);
+    } else {
+        appData.survey.answers[key].push(value);
+    }
+}
+
+function showQuestion(questionNum) {
+    // إخفاء جميع الأسئلة
+    document.querySelectorAll('.question').forEach(q => {
+        q.classList.remove('active');
+    });
+    
+    // إظهار السؤال المطلوب
+    const questionElement = document.getElementById(`question-${questionNum}`);
+    if (questionElement) {
+        questionElement.classList.add('active');
+        appData.survey.currentQuestion = questionNum;
+        
+        // تحديث أزرار التنقل
+        updateSurveyButtons();
+        
+        // استعادة الإجابة السابقة إن وجدت
+        restoreAnswer(questionNum);
+    }
+}
+
+function restoreAnswer(questionNum) {
+    const answer = appData.survey.answers[`q${questionNum}`];
+    if (!answer) return;
+    
+    const questionElement = document.getElementById(`question-${questionNum}`);
+    
+    if (Array.isArray(answer)) {
+        // إجابة متعددة
+        answer.forEach(value => {
+            const option = questionElement.querySelector(`.option-card[data-value="${value}"]`);
+            if (option) option.classList.add('selected');
+        });
+    } else {
+        // إجابة فردية
+        if (questionNum == 4) {
+            // سلايدر الساعات
+            const slider = document.getElementById('hours-slider');
+            const valueDisplay = document.getElementById('hours-value');
+            if (slider && valueDisplay) {
+                slider.value = answer;
+                valueDisplay.textContent = answer + ' ساعات';
+            }
+        } else {
+            // خيارات عادية
+            const option = questionElement.querySelector(`input[value="${answer}"]`);
+            if (option) {
+                option.checked = true;
+                option.closest('.option-item').classList.add('selected');
+            } else {
+                const cardOption = questionElement.querySelector(`.option-card[data-value="${answer}"]`);
+                if (cardOption) cardOption.classList.add('selected');
+            }
+        }
+    }
+}
+
+function validateCurrentQuestion() {
+    const questionNum = appData.survey.currentQuestion;
+    const answer = appData.survey.answers[`q${questionNum}`];
+    
+    if (questionNum === 6) {
+        // سؤال متعدد الإجابات
+        return answer && answer.length > 0;
+    } else {
+        // أسئلة إجابة واحدة
+        return answer !== undefined && answer !== '';
+    }
+}
+
+function updateSurveyButtons() {
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const submitBtn = document.getElementById('submit-btn');
+    
+    // زر السابق
+    if (prevBtn) {
+        prevBtn.disabled = appData.survey.currentQuestion === 1;
+    }
+    
+    // زر التالي والإرسال
+    if (nextBtn && submitBtn) {
+        if (appData.survey.currentQuestion === appData.survey.totalQuestions) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-flex';
+        } else {
+            nextBtn.style.display = 'inline-flex';
+            submitBtn.style.display = 'none';
+        }
+    }
+}
+
+function updateProgressBar() {
+    const progress = (appData.survey.currentQuestion / appData.survey.totalQuestions) * 100;
+    const progressFill = document.getElementById('progress-fill');
+    const progressText = document.getElementById('progress-text');
+    
+    if (progressFill) {
+        progressFill.style.width = `${progress}%`;
+    }
+    
+    if (progressText) {
+        progressText.textContent = `${appData.survey.currentQuestion}/${appData.survey.totalQuestions}`;
+    }
+}
+
+function processSurveyResults() {
+    // تحديد المسار بناءً على الإجابات
+    const interests = appData.survey.answers.q1;
+    const goal = appData.survey.answers.q2;
+    const level = appData.survey.answers.q3;
+    const hours = appData.survey.answers.hours;
+    const language = appData.survey.answers.q5;
+    const workInterests = appData.survey.answers.q6;
+    
+    // تحديد المسار الأساسي بناءً على الاهتمامات
+    let path = 'programming'; // مسار افتراضي
+    
+    if (interests === 'design') path = 'design';
+    else if (interests === 'languages') path = 'languages';
+    else if (interests === 'marketing') path = 'marketing';
+    else if (interests === 'business') path = 'business';
+    else if (interests === 'ai') path = 'ai';
+    
+    // حفظ بيانات المستخدم
+    appData.user.interests = [interests];
+    if (workInterests) {
+        appData.user.interests = appData.user.interests.concat(workInterests);
+    }
+    appData.user.path = path;
+    
+    // حفظ في localStorage
+    localStorage.setItem('userData', JSON.stringify({
+        interests: appData.user.interests,
+        path: appData.user.path
+    }));
+}
+
+// ===== إدارة شاشة النتائج =====
+function initResultsScreen() {
+    const startPathBtn = document.getElementById('start-path-btn');
+    const retakeSurveyBtn = document.getElementById('retake-survey');
+    
+    if (startPathBtn) {
+        startPathBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showScreen('dashboard-screen');
+        });
+    }
+    
+    if (retakeSurveyBtn) {
+        retakeSurveyBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            resetSurvey();
+            showScreen('survey-screen');
+        });
+    }
+}
+
+function displayResults() {
+    const path = appData.user.path;
+    const pathData = appData.paths[path];
+    
+    if (pathData) {
+        document.getElementById('path-title').textContent = pathData.title;
+        document.getElementById('path-description').textContent = pathData.description;
+        document.getElementById('detail-level').textContent = pathData.level;
+        document.getElementById('detail-time').textContent = pathData.time;
+        document.getElementById('detail-languages').textContent = pathData.languages;
+        document.getElementById('path-icon').className = pathData.icon;
+    }
+}
+
+function resetSurvey() {
+    appData.survey.currentQuestion = 1;
+    appData.survey.answers = {};
+    appData.survey.progress = 0;
+    
+    // إعادة تعيين الواجهة
+    document.querySelectorAll('.option-card, .option-item').forEach(el => {
+        el.classList.remove('selected');
+    });
+    
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.checked = false;
+    });
+    
+    const slider = document.getElementById('hours-slider');
+    const hoursValue = document.getElementById('hours-value');
+    if (slider && hoursValue) {
+        slider.value = 5;
+        hoursValue.textContent = '5 ساعات';
+    }
+    
+    showQuestion(1);
+    updateProgressBar();
+}
+
+// ===== إدارة لوحة التحكم =====
+function initDashboard() {
+    // التبويبات الجانبية
+    document.querySelectorAll('.sidebar-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // إزالة النشاط من جميع التبويبات
+            document.querySelectorAll('.sidebar-tab').forEach(t => {
+                t.classList.remove('active');
+            });
+            
+            // إضافة النشاط للتبويب المحدد
+            this.classList.add('active');
+            
+            // إظهار القسم المحدد
+            showContentSection(targetTab);
+        });
+    });
+    
+    // زر الملف الشخصي
+    const profileBtn = document.getElementById('profile-btn');
+    if (profileBtn) {
+        profileBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showModal('profile-modal');
+        });
+    }
+    
+    // زر المفضلة
+    const favoritesBtn = document.getElementById('favorites-btn');
+    if (favoritesBtn) {
+        favoritesBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showModal('favorites-modal');
+        });
+    }
+}
+
+function showContentSection(section) {
+    // إخفاء جميع الأقسام
+    document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // إظهار القسم المحدد
+    const targetSection = document.getElementById(`${section}-section`);
+    if (targetSection) {
+        targetSection.classList.add('active');
+        currentSection = section;
+        loadSectionContent(section);
+    }
+}
+
+function loadSectionContent(section) {
+    const containers = {
+        learning: 'learning-cards',
+        tools: 'tools-cards',
+        tests: 'tests-cards',
+        jobs: 'jobs-cards'
+    };
+    
+    const containerId = containers[section];
+    const container = document.getElementById(containerId);
+    
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    const platforms = appData.platforms[section] || [];
+    
+    platforms.forEach(platform => {
+        const card = createPlatformCard(platform, section);
+        container.appendChild(card);
+    });
+    
+    initSectionFilters(section);
+}
+
+function createPlatformCard(platform, type) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.dataset.id = platform.id;
+    card.dataset.type = type;
+    
+    const isFavorite = appData.user.favorites.some(fav => 
+        fav.id === platform.id && fav.type === type
+    );
+    
+    const favoriteClass = isFavorite ? 'fas' : 'far';
+    const favoriteText = isFavorite ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة';
+    
+    card.innerHTML = `
+        <div class="card-header">
+            <div class="card-logo">
+                <i class="${platform.logo}"></i>
+            </div>
+            <div class="card-title">
+                <h4>${platform.name}</h4>
+                <p>${platform.description}</p>
+            </div>
+            <span class="card-badge">${platform.cost}</span>
+        </div>
+        <div class="card-body">
+            <p class="card-description">${platform.description}</p>
+            <ul class="card-features">
+                ${platform.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+        </div>
+        <div class="card-footer">
+            <div class="card-actions">
+                <button class="btn-secondary btn-sm details-btn">التفاصيل</button>
+                <a href="${platform.url}" target="_blank" class="btn-primary btn-sm">زيارة الموقع</a>
+            </div>
+            <button class="btn-favorite btn-sm fav-btn">
+                <i class="${favoriteClass} fa-heart"></i> ${favoriteText}
+            </button>
+        </div>
+    `;
+    
+    // إضافة مستمعي الأحداث
+    const detailsBtn = card.querySelector('.details-btn');
+    const favBtn = card.querySelector('.fav-btn');
+    
+    detailsBtn.addEventListener('click', function() {
+        showPlatformDetails(platform, type);
+    });
+    
+    favBtn.addEventListener('click', function() {
+        toggleFavorite(platform, type, card);
+    });
+    
+    return card;
+}
+
+function showPlatformDetails(platform, type) {
+    const isFavorite = appData.user.favorites.some(fav => 
+        fav.id === platform.id && fav.type === type
+    );
+    
+    const favoriteClass = isFavorite ? 'fas' : 'far';
+    const favoriteText = isFavorite ? 'إزالة من المفضلة' : 'إضافة إلى المفضلة';
+    
+    // تعبئة البيانات
+    document.getElementById('modal-title').textContent = platform.name;
+    document.getElementById('modal-description').textContent = platform.description;
+    document.getElementById('modal-logo').className = platform.logo;
+    
+    // المميزات
+    const featuresList = document.getElementById('modal-features');
+    featuresList.innerHTML = '';
+    platform.features.forEach(feature => {
+        const li = document.createElement('li');
+        li.textContent = feature;
+        featuresList.appendChild(li);
+    });
+    
+    // المواصفات
+    document.getElementById('modal-certificates').textContent = platform.certificates || '-';
+    document.getElementById('modal-level').textContent = platform.level || '-';
+    document.getElementById('modal-cost').textContent = platform.cost;
+    document.getElementById('modal-lang').textContent = platform.language || '-';
+    
+    // الروابط والأزرار
+    const modalLink = document.getElementById('modal-link');
+    modalLink.href = platform.url;
+    
+    const modalFavorite = document.getElementById('modal-favorite');
+    modalFavorite.innerHTML = `<i class="${favoriteClass} fa-heart"></i> ${favoriteText}`;
+    
+    // إضافة مستمعي الأحداث
+    modalFavorite.onclick = function() {
+        toggleFavorite(platform, type);
+        showPlatformDetails(platform, type); // تحديث النافذة
+    };
+    
+    // إظهار النافذة
+    showModal('platform-modal');
+}
+
+function initSectionFilters(section) {
+    const categoryFilter = document.getElementById(`${section}-category`);
+    const languageFilter = document.getElementById(`${section}-language`);
+    const levelFilter = document.getElementById(`${section}-level`);
+    const fieldFilter = document.getElementById(`${section}-field`);
+    const typeFilter = document.getElementById(`${section}-type`);
+    const locationFilter = document.getElementById(`${section}-location`);
+    
+    const filters = [categoryFilter, languageFilter, levelFilter, fieldFilter, typeFilter, locationFilter];
+    
+    filters.forEach(filter => {
+        if (filter) {
+            filter.addEventListener('change', function() {
+                loadSectionContent(section);
+            });
+        }
+    });
+}
+
+function loadDashboardContent() {
+    // تحميل محتوى لوحة التحكم عند الدخول أول مرة
+    loadSectionContent('learning');
+    
+    // تحديث تقدم المستخدم
+    updateUserProgress();
+}
+
+function updateUserProgress() {
+    const progressPercent = document.querySelector('.progress-percent');
+    if (progressPercent) {
+        progressPercent.textContent = `${appData.user.progress}%`;
+        
+        const progressCircle = document.querySelector('.progress-circle');
+        if (progressCircle) {
+            progressCircle.style.background = `conic-gradient(var(--primary-color) ${appData.user.progress}%, var(--border-color) 0)`;
+        }
+    }
+}
+
+// ===== نظام المفضلة =====
+function initFavorites() {
+    const savedFavorites = localStorage.getItem('favorites');
+    if (savedFavorites) {
+        appData.user.favorites = JSON.parse(savedFavorites);
+    }
+}
+
+function toggleFavorite(platform, type, cardElement = null) {
+    const favoriteIndex = appData.user.favorites.findIndex(fav => 
+        fav.id === platform.id && fav.type === type
+    );
+    
+    if (favoriteIndex > -1) {
+        // إزالة من المفضلة
+        appData.user.favorites.splice(favoriteIndex, 1);
+        showToast('تمت الإزالة من المفضلة');
+    } else {
+        // إضافة إلى المفضلة
+        appData.user.favorites.push({
+            id: platform.id,
+            type: type,
+            name: platform.name,
+            description: platform.description,
+            url: platform.url
+        });
+        showToast('تمت الإضافة إلى المفضلة');
+    }
+    
+    // حفظ في localStorage
+    localStorage.setItem('favorites', JSON.stringify(appData.user.favorites));
+    
+    // تحديث الواجهة إذا كان هناك عنصر بطاقة
+    if (cardElement) {
+        const favBtn = cardElement.querySelector('.fav-btn');
+        const favIcon = cardElement.querySelector('.fav-btn i');
+        
+        if (favoriteIndex > -1) {
+            favBtn.innerHTML = '<i class="far fa-heart"></i> إضافة إلى المفضلة';
+            favBtn.classList.remove('active');
+        } else {
+            favBtn.innerHTML = '<i class="fas fa-heart"></i> إزالة من المفضلة';
+            favBtn.classList.add('active');
+        }
+    }
+}
+
+function loadFavoritesContent() {
+    const container = document.getElementById('favorites-list');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (appData.user.favorites.length === 0) {
+        container.innerHTML = '<p class="text-center">لا توجد عناصر في المفضلة بعد</p>';
+        return;
+    }
+    
+    appData.user.favorites.forEach(fav => {
+        const favItem = document.createElement('div');
+        favItem.className = 'favorite-item';
+        
+        favItem.innerHTML = `
+            <div class="favorite-info">
+                <h4>${fav.name}</h4>
+                <p>${fav.description}</p>
+            </div>
+            <div class="favorite-actions">
+                <a href="${fav.url}" target="_blank" class="btn-primary btn-sm">زيارة الموقع</a>
+                <button class="btn-secondary btn-sm remove-favorite" data-id="${fav.id}" data-type="${fav.type}">إزالة</button>
+            </div>
+        `;
+        
+        container.appendChild(favItem);
+    });
+    
+    // إضافة مستمعي الأحداث لأزرار الإزالة
+    document.querySelectorAll('.remove-favorite').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const type = this.dataset.type;
+            
+            removeFavorite(id, type);
+            loadFavoritesContent();
+        });
+    });
+}
+
+function removeFavorite(id, type) {
+    const favoriteIndex = appData.user.favorites.findIndex(fav => 
+        fav.id == id && fav.type === type
+    );
+    
+    if (favoriteIndex > -1) {
+        appData.user.favorites.splice(favoriteIndex, 1);
+        localStorage.setItem('favorites', JSON.stringify(appData.user.favorites));
+        showToast('تمت الإزالة من المفضلة');
+    }
+}
+
+// ===== نظام البحث =====
+function initSearch() {
+    const searchInput = document.getElementById('global-search');
+    
+    if (searchInput) {
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                const searchTerm = this.value.trim().toLowerCase();
+                
+                if (searchTerm.length < 2) {
+                    loadSectionContent(currentSection);
+                    return;
+                }
+                
+                searchAcrossSections(searchTerm);
+            }, 300);
+        });
+    }
+}
+
+function searchAcrossSections(searchTerm) {
+    let platforms = [];
+    
+    // جمع المنصات من القسم النشط
+    switch(currentSection) {
+        case 'learning':
+            platforms = appData.platforms.learning;
+            break;
+        case 'tools':
+            platforms = appData.platforms.tools;
+            break;
+        case 'tests':
+            platforms = appData.platforms.tests;
+            break;
+        case 'jobs':
+            platforms = appData.platforms.jobs;
+            break;
+    }
+    
+    // تصفية النتائج
+    const results = platforms.filter(platform => 
+        platform.name.toLowerCase().includes(searchTerm) ||
+        platform.description.toLowerCase().includes(searchTerm) ||
+        platform.features.some(feature => feature.toLowerCase().includes(searchTerm))
+    );
+    
+    // عرض النتائج
+    displaySearchResults(results, currentSection);
+}
+
+function displaySearchResults(results, section) {
+    const container = document.getElementById(`${section}-cards`);
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    if (results.length === 0) {
+        container.innerHTML = '<p class="text-center">لا توجد نتائج تطابق بحثك</p>';
+        return;
+    }
+    
+    results.forEach(platform => {
+        const card = createPlatformCard(platform, section);
+        container.appendChild(card);
+    });
+}
+
+// ===== إدارة الاختبارات =====
+function initQuiz() {
+    const quizNext = document.getElementById('quiz-next');
+    const quizPrev = document.getElementById('quiz-prev');
+    const quizSubmit = document.getElementById('quiz-submit');
+    const retakeQuiz = document.getElementById('retake-quiz');
+    
+    if (quizNext) {
+        quizNext.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleQuizNext();
+        });
+    }
+    
+    if (quizPrev) {
+        quizPrev.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleQuizPrev();
+        });
+    }
+    
+    if (quizSubmit) {
+        quizSubmit.addEventListener('click', function(e) {
+            e.preventDefault();
+            handleQuizSubmit();
+        });
+    }
+    
+    if (retakeQuiz) {
+        retakeQuiz.addEventListener('click', function(e) {
+            e.preventDefault();
+            startQuiz('programming');
+        });
+    }
+}
+
+function startQuiz(quizType) {
+    const questions = appData.quizQuestions[quizType];
+    if (!questions || questions.length === 0) {
+        showToast('لا توجد أسئلة متاحة لهذا الاختبار حالياً', 'warning');
+        return;
+    }
+    
+    appData.quiz = {
+        currentQuestion: 0,
+        score: 0,
+        totalQuestions: questions.length,
+        questions: questions,
+        userAnswer: null
+    };
+    
+    showModal('quiz-modal');
+    displayQuizQuestion();
+}
+
+function displayQuizQuestion() {
+    const quiz = appData.quiz;
+    const currentQ = quiz.questions[quiz.currentQuestion];
+    
+    if (!currentQ) return;
+    
+    document.getElementById('quiz-title').textContent = 'اختبار المهارات';
+    document.getElementById('question-text').textContent = currentQ.question;
+    
+    const optionsContainer = document.getElementById('quiz-options');
+    optionsContainer.innerHTML = '';
+    
+    currentQ.options.forEach((option, index) => {
+        const optionEl = document.createElement('div');
+        optionEl.className = 'quiz-option';
+        optionEl.textContent = option;
+        optionEl.dataset.index = index;
+        
+        optionEl.addEventListener('click', function() {
+            // إزالة التحديد من جميع الخيارات
+            optionsContainer.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            // تحديد الخيار الحالي
+            this.classList.add('selected');
+            quiz.userAnswer = index;
+        });
+        
+        optionsContainer.appendChild(optionEl);
+    });
+    
+    // تحديث شريط التقدم
+    updateQuizProgress();
+}
+
+function updateQuizProgress() {
+    const quiz = appData.quiz;
+    const progress = ((quiz.currentQuestion + 1) / quiz.totalQuestions) * 100;
+    
+    const progressBar = document.getElementById('quiz-progress');
+    const progressText = document.getElementById('quiz-progress-text');
+    
+    if (progressBar) {
+        progressBar.style.width = `${progress}%`;
+    }
+    
+    if (progressText) {
+        progressText.textContent = `${quiz.currentQuestion + 1}/${quiz.totalQuestions}`;
+    }
+    
+    // تحديث أزرار التنقل
+    const prevBtn = document.getElementById('quiz-prev');
+    const nextBtn = document.getElementById('quiz-next');
+    const submitBtn = document.getElementById('quiz-submit');
+    
+    if (prevBtn) {
+        prevBtn.style.display = quiz.currentQuestion === 0 ? 'none' : 'inline-block';
+    }
+    
+    if (nextBtn && submitBtn) {
+        if (quiz.currentQuestion === quiz.totalQuestions - 1) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-block';
+        } else {
+            nextBtn.style.display = 'inline-block';
+            submitBtn.style.display = 'none';
+        }
+    }
+}
+
+function handleQuizNext() {
+    const quiz = appData.quiz;
+    
+    if (quiz.userAnswer === null) {
+        showToast('يرجى اختيار إجابة قبل المتابعة', 'warning');
+        return;
+    }
+    
+    // التحقق من الإجابة
+    if (quiz.userAnswer === quiz.questions[quiz.currentQuestion].correct) {
+        quiz.score++;
+    }
+    
+    quiz.currentQuestion++;
+    quiz.userAnswer = null;
+    displayQuizQuestion();
+}
+
+function handleQuizPrev() {
+    appData.quiz.currentQuestion--;
+    appData.quiz.userAnswer = null;
+    displayQuizQuestion();
+}
+
+function handleQuizSubmit() {
+    const quiz = appData.quiz;
+    
+    if (quiz.userAnswer === null) {
+        showToast('يرجى اختيار إجابة قبل إنهاء الاختبار', 'warning');
+        return;
+    }
+    
+    // التحقق من الإجابة الأخيرة
+    if (quiz.userAnswer === quiz.questions[quiz.currentQuestion].correct) {
+        quiz.score++;
+    }
+    
+    // حساب النتيجة
+    const scorePercent = Math.round((quiz.score / quiz.totalQuestions) * 100);
+    
+    // عرض النتائج
+    showQuizResults(scorePercent);
+}
+
+function showQuizResults(scorePercent) {
+    hideAllModals();
+    
+    document.getElementById('score-percent').textContent = `${scorePercent}%`;
+    
+    let message = '';
+    if (scorePercent >= 90) {
+        message = 'ممتاز! لديك فهم رائع للموضوع.';
+    } else if (scorePercent >= 70) {
+        message = 'جيد جداً! لديك فهم قوي للموضوع.';
+    } else if (scorePercent >= 50) {
+        message = 'مستوى مقبول! يمكنك التحسين بالمزيد من الممارسة.';
+    } else {
+        message = 'يحتاج تحسين! نوصي بمراجعة المواد التعليمية.';
+    }
+    
+    document.getElementById('result-message').textContent = message;
+    
+    showModal('quiz-results-modal');
+}
+
+// ===== إدارة الملف الشخصي =====
+function loadProfileData() {
+    // تحميل بيانات الملف الشخصي
+    document.getElementById('profile-path').textContent = appData.paths[appData.user.path]?.title || 'لم يتم تحديد مسار بعد';
+    
+    // تحديث الإحصائيات
+    const statValues = document.querySelectorAll('.stat-value');
+    if (statValues.length >= 3) {
+        statValues[0].textContent = appData.user.favorites.length;
+        statValues[1].textContent = appData.user.testResults.length;
+        statValues[2].textContent = `${appData.user.progress}%`;
+    }
+    
+    // تحديث الاهتمامات
+    const interestsList = document.querySelector('.interests-list');
+    if (interestsList) {
+        interestsList.innerHTML = '';
+        
+        appData.user.interests.forEach(interest => {
+            const interestEl = document.createElement('span');
+            interestEl.className = 'interest-tag';
+            interestEl.textContent = getInterestName(interest);
+            interestsList.appendChild(interestEl);
+        });
+    }
+}
+
+function getInterestName(interestKey) {
+    const interests = {
+        programming: 'البرمجة',
+        design: 'التصميم',
+        languages: 'اللغات',
+        marketing: 'التسويق',
+        business: 'إدارة الأعمال',
+        ai: 'الذكاء الاصطناعي',
+        'remote-work': 'العمل عن بعد',
+        'freelance-work': 'العمل الحر',
+        startup: 'المشاريع الريادية',
+        'career-growth': 'التطور الوظيفي',
+        certification: 'الشهادات',
+        skills: 'المهارات'
+    };
+    
+    return interests[interestKey] || interestKey;
+}
+
+// ===== وظائف مساعدة =====
+function showToast(message, type = 'success') {
+    const toast = document.getElementById('toast');
+    const toastMessage = toast.querySelector('.toast-message');
+    const toastIcon = toast.querySelector('.toast-icon');
+    
+    if (!toast || !toastMessage) return;
+    
+    toastMessage.textContent = message;
+    
+    const icons = {
+        success: 'fas fa-check-circle',
+        error: 'fas fa-exclamation-circle',
+        warning: 'fas fa-exclamation-triangle',
+        info: 'fas fa-info-circle'
+    };
+    
+    toastIcon.className = `${icons[type] || icons.success} toast-icon`;
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 3000);
+}
+
+function restoreUserState() {
+    const savedUserData = localStorage.getItem('userData');
+    if (savedUserData) {
+        try {
+            const userData = JSON.parse(savedUserData);
+            appData.user.interests = userData.interests || [];
+            appData.user.path = userData.path || '';
+            
+            if (appData.user.path) {
+                showScreen('dashboard-screen');
+            }
+        } catch (error) {
+            console.error('خطأ في تحميل بيانات المستخدم:', error);
+        }
+    }
+}
+
+// ===== منع المشاكل الشائعة =====
+document.addEventListener('click', function(e) {
+    // منع السلوك الافتراضي للروابط الفارغة
+    if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
+        e.preventDefault();
+    }
+});
+
+// التأكد من تحميل جميع العناصر
+window.addEventListener('load', function() {
+    console.log("📦 تم تحميل الصفحة بالكامل");
+});
+
+// التعامل مع أخطاء التحميل
+window.addEventListener('error', function(e) {
+    console.error('خطأ في تحميل المورد:', e);
+});
+
+// ===== تهيئة إضافية للتأكد من عدم تجمد التطبيق =====
+setTimeout(() => {
+    // التأكد من أن شاشة الترحيب هي الشاشة النشطة
+    if (!document.querySelector('.screen.active')) {
+        showScreen('welcome-screen');
+    }
+    
+    // التأكد من إغلاق جميع النوافذ
+    hideAllModals();
+    
+    console.log("🔧 تم الانتهاء من التهيئة الإضافية");
+}, 500);
+  
+</script>
+</body>
+</html>
